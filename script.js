@@ -9,4 +9,5 @@ function clickObject() {
   }
 
   object.addEventListener('click', incrScore);
+
 }
