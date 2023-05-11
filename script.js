@@ -5,8 +5,10 @@ let isPlay = false;
 
 btnStartElement.addEventListener('click', (e) => {
 	e.preventDefault();
-	isPlay = true;
-	moveObject(isPlay);
+	if (!isPlay) {
+		isPlay = true;
+		moveObject(isPlay);
+	}
 });
 
 const moveObject = (isPlay) => {
@@ -23,7 +25,7 @@ const moveObject = (isPlay) => {
 
 		// Задаем начальное положение элемента
 		objectElement.style.top = '0';
-		objectElement.style.left = '50%';
+		objectElement.style.left = Math.random() * window.innerWidth + 'px';
 
 		// Добавляем элемент на страницу
 		areaElement.append(objectElement);
@@ -39,6 +41,7 @@ const moveObject = (isPlay) => {
 			// Если элемент достиг нижней границы экрана, останавливаем интервал
 			if (currentTop >= window.innerHeight - 50) {
 				objectElement.style.top = 0;
+				objectElement.style.left = Math.random() * window.innerWidth + 'px';
 			}
 		}, 20);
 	}
