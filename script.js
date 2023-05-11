@@ -1,3 +1,9 @@
+let countScore = 0;
+
+function clickObject() {
+    countScore++;   
+}
+
 const areaElement = document.querySelector('#area');
 document.body.appendChild(areaElement);
 let isPlay = false;
@@ -47,3 +53,4 @@ const moveObject = (isPlay) => {
 };
 
 window.addEventListener('click', () => {});
+
