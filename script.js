@@ -1,15 +1,14 @@
-const btnStartElement = document.querySelector('#start');
 const areaElement = document.querySelector('#area');
 document.body.appendChild(areaElement);
 let isPlay = false;
 
-btnStartElement.addEventListener('click', (e) => {
+function startGame(e) {
 	e.preventDefault();
 	if (!isPlay) {
 		isPlay = true;
 		moveObject(isPlay);
 	}
-});
+}
 
 const moveObject = (isPlay) => {
 	if (isPlay) {
