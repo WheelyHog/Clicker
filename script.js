@@ -16,11 +16,11 @@ const moveObject = (isPlay) => {
 		const objectElement = document.createElement('div');
 		objectElement.id = 'object';
 
-		objectElement.style.width = '50px';
-		objectElement.style.height = '50px';
-		objectElement.style.borderRadius = '50%';
-		objectElement.style.backgroundColor = 'orange';
-		objectElement.style.position = 'fixed';
+		// objectElement.style.width = '50px';
+		// objectElement.style.height = '50px';
+		// objectElement.style.borderRadius = '50%';
+		// objectElement.style.backgroundColor = 'orange';
+		// objectElement.style.position = 'fixed';
 
 		// Задаем начальное положение элемента
 		objectElement.style.top = '0';
