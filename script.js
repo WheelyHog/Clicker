@@ -1,18 +1,32 @@
 let countScore = 0;
+let score = document.querySelector('#score');
+const areaElement = document.querySelector('#area');
+
 
 function clickObject() {
-    countScore++;   
+	countScore++;
+	score.innerHTML = countScore;
 }
 
-const areaElement = document.querySelector('#area');
 document.body.appendChild(areaElement);
 let isPlay = false;
 
-function startGame(e) {
-	e.preventDefault();
+function startGame(event) {
+	event.preventDefault();
 	if (!isPlay) {
 		isPlay = true;
 		moveObject(isPlay);
+	}
+}
+
+const gameOver = (event) => {
+	if (event.target.classList.contains("parent")) {
+		alert('Game Over!');
+		countScore = 0;
+		score.innerHTML = countScore;
+		isPlay = false
+		moveObject(isPlay)
+		return
 	}
 }
 
@@ -21,6 +35,7 @@ const moveObject = (isPlay) => {
 		// Создаем элемент
 		const objectElement = document.createElement('div');
 		objectElement.id = 'object';
+		objectElement.addEventListener('click', clickObject);
 
 		// objectElement.style.width = '50px';
 		// objectElement.style.height = '50px';
@@ -41,7 +56,7 @@ const moveObject = (isPlay) => {
 			const currentTop = parseInt(objectElement.style.top);
 
 			// Изменяем положение элемента на следующий шаг
-			objectElement.style.top = currentTop + 5 + 'px';
+			objectElement.style.top = currentTop + 1 + 'px';
 
 			// Если элемент достиг нижней границы экрана, останавливаем интервал
 			if (currentTop >= window.innerHeight - 50) {
@@ -52,5 +67,5 @@ const moveObject = (isPlay) => {
 	}
 };
 
-window.addEventListener('click', () => {});
+window.addEventListener('click', () => { });
 

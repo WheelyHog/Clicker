@@ -12,12 +12,12 @@
 <body>
 
   <header>
-    <button id="start" onclick="startGame()">Start</button>
+    <button id="start" onclick="startGame(event)">Start</button>
     <p id="score">0</p>
   </header>
 
-  <div id="area" onclick="gameOver()">
-    <div id="object" onclick="clickObject()"></div>
+  <div id="area" onclick="gameOver(event)" class="parent">
+    <!-- <div id="object" onclick="clickObject()"></div> -->
   </div>
 
   <script src="script.js"></script>
